@@ -1,0 +1,9 @@
+Package: com.wh0ba.appdoc
+Name: AppDoc
+Depends: mobilesubstrate
+Version: 0.1
+Architecture: iphoneos-arm
+Description: swipe up on an app to open its documents folder in Filza
+Maintainer: Wh0ba <whappfanr@gmail.com>
+Author: Wh0ba <whappfanr@gmail.com>
+Section: Tweaks
