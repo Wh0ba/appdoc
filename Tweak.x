@@ -43,7 +43,7 @@
 		  NSString *oFilza = [NSString stringWithFormat:@"%@%@", @"filza://view", [dataURL.path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]]];
 
 
-		  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"AppDoc" message:@"Open In Filza?" preferredStyle:UIAlertControllerStyleAlert];
+		  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Open In Filza" message:nil preferredStyle:UIAlertControllerStyleAlert];
 
 		  UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Open" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 
@@ -65,3 +65,5 @@
 %ctor {
 	%init(AppDoc);
 }
+
+

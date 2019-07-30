@@ -1,6 +1,6 @@
 INSTALL_TARGET_PROCESSES = SpringBoard
 
-DEBUG=0
+#DEBUG=0
 TARGET = :::8.1
 
 include $(THEOS)/makefiles/common.mk
