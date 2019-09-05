@@ -2,35 +2,35 @@
 
 
 
-
 %group AppDoc
 
 %hook SBIconView
 
 
-%property (nonatomic, retain) UISwipeGestureRecognizer *swipeUpGesture;
+%property (nonatomic, retain) UISwipeGestureRecognizer *swipeGesture;
 
 - (void)setLocation:(long long)arg1 {
 
   %orig;
 
-  if (!self.swipeUpGesture) {
+  if (!self.swipeGesture) {
 
-    self.swipeUpGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedUp:)];
+    self.swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(appdocSwipe:)];
 
-    self.swipeUpGesture.direction = UISwipeGestureRecognizerDirectionUp;
+    self.swipeGesture.direction = UISwipeGestureRecognizerDirectionUp;
 
-    [self addGestureRecognizer:self.swipeUpGesture];
+    [self addGestureRecognizer:self.swipeGesture];
   }
 }
 
 
 %new
-- (void)swipedUp:(UISwipeGestureRecognizer *)recognizer {
+- (void)appdocSwipe:(UISwipeGestureRecognizer *)recognizer {
 
 		  NSString *bundleID = [self.icon applicationBundleID];
 
 		  if (!bundleID) return;
+		  if ([bundleID isEqualToString:@"com.textasticapp.textastic-universal"]) return;
 
 
 

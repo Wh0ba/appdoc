@@ -8,7 +8,7 @@
 
 @interface SBIconView : UIView
 @property (nonatomic,retain) SBIcon *icon;
-@property (nonatomic, retain) UISwipeGestureRecognizer * swipeUpGesture;
+@property (nonatomic, retain) UISwipeGestureRecognizer * swipeGesture;
 @end
 
 
