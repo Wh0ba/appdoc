@@ -27,6 +27,9 @@
 %new
 - (void)appdocSwipe:(UISwipeGestureRecognizer *)recognizer {
 
+
+		if (self.isInDock) return;
+
 		  NSString *bundleID = [self.icon applicationBundleID];
 
 		  if (!bundleID) return;

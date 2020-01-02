@@ -9,6 +9,24 @@
 @interface SBIconView : UIView
 @property (nonatomic,retain) SBIcon *icon;
 @property (nonatomic, retain) UISwipeGestureRecognizer * swipeGesture;
+@property (nonatomic, assign) BOOL isInDock;
+@end
+
+
+
+@interface SBSApplicationShortcutItem : NSObject <NSCopying>
+
+@property (nonatomic,copy) NSString * type;
+@property (nonatomic,copy) NSString * localizedTitle;
+@property (nonatomic,copy) NSString * localizedSubtitle;
+@property (nonatomic,copy) NSString * bundleIdentifierToLaunch;
+
+@end
+
+@interface SBUIAppIconForceTouchControllerDataProvider : NSObject
+
+-(NSString *)applicationBundleIdentifier;
+
 @end
 
 
