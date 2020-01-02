@@ -33,7 +33,6 @@
 		  NSString *bundleID = [self.icon applicationBundleID];
 
 		  if (!bundleID) return;
-		  if ([bundleID isEqualToString:@"com.textasticapp.textastic-universal"]) return;
 
 
 
@@ -42,8 +41,10 @@
 
 		  NSURL *dataURL = [proxy dataContainerURL];
 		  if (!dataURL) return;
-
-		  NSString *oFilza = [NSString stringWithFormat:@"%@%@", @"filza://view", [dataURL.path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]]];
+		  NSString *dataContainerPath = [dataURL.path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]];
+		  dataContainerPath = [dataContainerPath stringByAppendingPathComponent:@"Documents"];
+		  
+		  NSString *oFilza = [NSString stringWithFormat:@"%@%@", @"filza://view", dataContainerPath];//[dataURL.path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]]];
 
 
 		  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Open In Filza" message:nil preferredStyle:UIAlertControllerStyleAlert];
